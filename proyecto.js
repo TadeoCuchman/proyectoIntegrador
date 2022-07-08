@@ -20,13 +20,13 @@ botonCerrarModal.onclick = (() => {
 
 company.onclick = (()=>{
     login.innerHTML = "Hola, empresa"
-    localStorage.setItem('login','empresa')
+    sessionStorage.setItem('login','empresa')
     modal.classList.toggle('display')
 })
 
 organization.onclick = (()=>{
     login.innerHTML = "Hola, organización"
-    localStorage.setItem('login','organización')
+    sessionStorage.setItem('login','organización')
     modal.classList.toggle('display')
 })
 
@@ -51,8 +51,8 @@ messageInput.addEventListener('keyup',(e)=>{
 })
 
 window.onload = function () {
-    if(localStorage.getItem('login')!= null)
-        login.innerHTML = `Hola, ${localStorage.getItem('login')}`
+    if(sessionStorage.getItem('login')!= null)
+        login.innerHTML = `Hola, ${sessionStorage.getItem('login')}`
 }
 
 function validateEmail(email) {
@@ -60,3 +60,20 @@ function validateEmail(email) {
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+
+const links = document.querySelectorAll("nav li a");
+ 
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+ 
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+ 
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}

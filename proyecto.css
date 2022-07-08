@@ -9,7 +9,6 @@ nav {
     position: relative;
     display: flex;
     height: 70px;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -17,7 +16,7 @@ nav {
     grid-area: logo;
     width: 120px;
     height: 40px;
-    margin-left: 50px;
+    margin-left:5%;
 }
 
 #form{
@@ -32,11 +31,16 @@ nav {
     flex-direction: row;
     list-style: none;
     gap: 40px;
+    margin-left: 2%;
+    flex:1;
+}
+
+li a{
+    text-decoration: none;
 }
 
 .login{
-    grid-area: login;
-    margin-right: 50px;
+    margin-right: 5%;
 }
 
 button {
