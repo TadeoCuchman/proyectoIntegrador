@@ -32,11 +32,13 @@ nav {
     grid-area: login;
     background-color: #5127CC;
     color: #fff;
-    width: 100px;
+    width: fit-content;
     height: 25px;
     border: none;
     border-radius: 50px;
     margin-right: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .login:hover, .enviar:hover {
@@ -373,8 +375,7 @@ footer .logo {
 
 /* Empieza el modal */
 
-.modalcontainer {
-    visibility:hidden;
+#modal-container {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -382,6 +383,7 @@ footer .logo {
     background-color: rgba(63, 63, 63, 0.672);
     top: 0;
     left: 0;
+    display: none;
 }
 
 
@@ -446,7 +448,7 @@ footer .logo {
     height: 25px;;
 }
 
-.empresa, .miorg {
+#company, #organization {
     display: flex;
     flex-direction: row;
     border: 1px solid #aaa;
@@ -456,22 +458,22 @@ footer .logo {
     height: 80px;
 }
 
-.empresa div, .miorg div {
+#company div, #organization div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 80px;
     height: 70px;
     border-radius: 9px 0 0 9px;
     font-size: 13px;
 }
 
-.empresa:hover, .miorg:hover {
+#company:hover, #organization:hover {
     box-shadow: 1px 1px #aaa;
     cursor: pointer;
 }
 
-.empresa div:last-child, .miorg div:last-child  {
+#company div:last-child, #organization div:last-child  {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -482,28 +484,28 @@ footer .logo {
     color: #aaa;
 }
 
-.empresa div:first-child {
+#company div:first-child {
     background-color: #5288FF;
     height: 100%;
 }
 
-.empresa h3 {
+#company h3 {
     font-size: 20px;
     color: #5288FF;
 }
 
-.miorg div:first-child {
+#organization div:first-child {
     background-color: #7749F8;
     height: 100%;
 }
 
-.miorg h3 {
+#organization h3 {
     font-size: 20px;
     color: #7749F8;
 
 }
 
-.miorg {
+#organization {
     margin-bottom: 30px;
 }
 
@@ -546,4 +548,15 @@ footer .logo {
     .imgmodal {
         display:none;
     }
+}
+
+.display{
+    display: block !important;
+}
+
+.align-to-end{
+    align-self: end;
+}
+.margined-right{
+    margin-right: 5%;
 }
