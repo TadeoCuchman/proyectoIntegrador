@@ -30,9 +30,9 @@ organization.onclick = (()=>{
     modal.classList.toggle('display')
 })
 
-nameInput.addEventListener('keyup',(e)=>{
-    if(isNaN(e.key)){
-        nameInput.value += e.key
+nameInput.addEventListener('keydown',(e)=>{
+    if(!isNaN(e.key)){
+        e.preventDefault()
     }
 })
 
