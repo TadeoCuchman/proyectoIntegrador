@@ -37,8 +37,12 @@ nav {
     border: none;
     border-radius: 50px;
     margin-right: 50px;
-
 }
+
+.login:hover, .enviar:hover {
+    cursor: pointer;
+}
+
 
 header {
     position: relative;
@@ -370,44 +374,138 @@ footer .logo {
 /* Empieza el modal */
 
 .modalcontainer {
+    visibility:hidden;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 100;
-    background-color: rgba(170, 170, 170, 0.434);
+    background-color: rgba(63, 63, 63, 0.672);
     top: 0;
     left: 0;
 }
 
-.cerrar {
-    position: absolute;
-    top: 16%;
-    left: 82%;
-    font-size: 25px;
-    z-index: 101;
-}
 
 .modal {
     display: grid;
     padding: 1px;
-    position: absolute;
+    position: relative;
     top: 15%;
     left: 15%;
     background-color: white;
     width: 70%;
     height: 50%;;
     border-radius: 25px;
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
 }
 
-.modal img {
+.imgmodal {
     width: 100%;
     height: 100%;
     border-radius: 25px 0 0 25px;
     object-fit: cover;
 }
 
+.registrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center
+}
 
+.registrartop {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.registrartop span:first-child:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.registrar h1 {
+    text-align: center;
+}
+
+.cerrar {
+    padding-right: 20px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.cerrar:hover{
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+.registrar img {
+    width: 25px;
+    height: 25px;;
+}
+
+.empresa, .miorg {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #aaa;
+    width: 80%;
+    margin-left: 20px;
+    border-radius: 10px;
+    height: 80px;
+}
+
+.empresa div, .miorg div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 70px;
+    border-radius: 9px 0 0 9px;
+    font-size: 13px;
+}
+
+.empresa:hover, .miorg:hover {
+    box-shadow: 1px 1px #aaa;
+    cursor: pointer;
+}
+
+.empresa div:last-child, .miorg div:last-child  {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 10px;
+    color: #aaa;
+}
+
+.empresa div:first-child {
+    background-color: #5288FF;
+    height: 100%;
+}
+
+.empresa h3 {
+    font-size: 20px;
+    color: #5288FF;
+}
+
+.miorg div:first-child {
+    background-color: #7749F8;
+    height: 100%;
+}
+
+.miorg h3 {
+    font-size: 20px;
+    color: #7749F8;
+
+}
+
+.miorg {
+    margin-bottom: 30px;
+}
 
 
 
@@ -439,5 +537,13 @@ footer .logo {
 
     #contacto {
         flex-direction: column;
+    }
+    .modal {
+        grid-template-columns: 1fr;
+
+    }
+
+    .imgmodal {
+        display:none;
     }
 }
