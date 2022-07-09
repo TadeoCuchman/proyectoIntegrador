@@ -43,10 +43,11 @@ li a{
     margin-right: 5%;
 }
 
-button {
+.login, .enviar {
     background-color: #5127CC;
     color: #fff;
     width: fit-content;
+    min-width: 120px;
     height: 25px;
     border: none;
     border-radius: 50px;
