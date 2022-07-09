@@ -543,6 +543,7 @@ footer .logo {
         grid-template-areas: 
             "logo login"
             "nav nav";     
+        height: 90px;
     }
 
     .login{ 
@@ -561,9 +562,11 @@ footer .logo {
         grid-template-columns: 1fr ;
     }
 
-    #soluciones div {
-        justify-content: flex-start
+    #soluciones div:last-child {
+        flex-direction: column-reverse;
     }
+
+
 
     #contacto {
         flex-direction: column;

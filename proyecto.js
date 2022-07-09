@@ -36,9 +36,15 @@ nameInput.addEventListener('keydown',(e)=>{
     }
 })
 
-emailInput.addEventListener('keydown',()=>{
+function validateEmail(email) {
+    const re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+emailInput.addEventListener('keyup',()=>{
     const email = emailInput.value;
-    if(!validateEmail(email))
+    if(!validateEmail(email) && email != '')
         emailError.innerHTML = "Hay algo mal con el correo"
     else emailError.innerHTML = ""
 })
@@ -55,11 +61,6 @@ window.onload = function () {
         login.innerHTML = `Hola, ${sessionStorage.getItem('login')}`
 }
 
-function validateEmail(email) {
-    const re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
 
 const links = document.querySelectorAll("nav li a");
  
