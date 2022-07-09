@@ -549,6 +549,10 @@ footer .logo {
         margin-left: 50%;
     }
 
+    .logo {
+        padding-top: 10px;
+    }
+
     #navLinks {
         justify-content: center;
     }
